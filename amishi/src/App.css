@@ -1,0 +1,109 @@
+/* Reset Default Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Light pastel gray */
+  color: #4a4a4a; /* Soft dark gray */
+  height: 100%;
+}
+
+/* Main App Container (Full Height) */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Fixed Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #a185c5; /* Soft pastel purple */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 50px;
+}
+
+/* Footer (Fixed at Bottom) */
+.footer {
+  
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #e5d5fa; /* Pastel Purple */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  height: 30px;
+}
+
+/* Footer Links */
+.footer a {
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  color: #d4e4fc; /* Lighter pastel blue */
+}
+
+/* Page Content (Scrollable) */
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-top: 60px; /* Offset for fixed navbar */
+  margin-bottom: 50px; /* Offset for fixed footer */
+  overflow-y: auto;
+}
+
+/* Pastel Themed Background */
+.pastel-theme {
+  background-color: #f0f4f8; /* Light pastel blue */
+}
+
+/* Buttons (Pastel Theme) */
+button {
+  background-color: #f9d6eb; /* Pastel pink */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #4a4a4a; /* Soft dark gray */
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #f7c8e0; /* Slightly darker pastel pink */
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0;
+  }
+  .content {
+    padding: 10px;
+    margin-top: 50px; /* Adjust for navbar */
+    margin-bottom: 40px; /* Adjust for footer */
+  }
+  .navbar {
+    font-size: 16px;
+    padding: 8px;
+   
+  }
+  .footer {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

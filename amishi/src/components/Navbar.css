@@ -1,0 +1,85 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #7e58a4;
+  color: white;
+}
+
+.navbar-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-middle .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* ✅ Better spacing */
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ec9595;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.auth-buttons button,
+.profile-section button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.auth-buttons button:hover,
+.profile-section button:hover {
+  background-color: #fbfbfb;
+  border-color: #ff6600;
+}
+
+.user-icon {
+  margin-right: 8px;
+  font-size: 24px; /* ✅ Ensuring better visibility */
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.user-icon:hover {
+  opacity: 0.8;
+}
+.profile-section {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Removes default outline */
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profile-section:focus {
+  outline: none;
+}
+
+.user-icon {
+  color: white; /* Ensure it matches the navbar theme */
+}
+

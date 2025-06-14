@@ -1,0 +1,82 @@
+/* 🌟 Full Page Styling */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f4f8; /* Light Blue */
+}
+
+/* 📌 Glassmorphic Signup Box */
+.signup-box {
+  background: #ffffff; /* White */
+  color: #333333; /* Dark Grey */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+
+/* 📝 Heading */
+.signup-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333333; /* Dark Grey */
+}
+
+/* 🎯 Input Fields */
+.signup-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #cccccc; /* Light Grey */
+  border-radius: 6px;
+  font-size: 16px;
+  background: #f9fafb; /* Light Grey */
+  color: #333333; /* Dark Grey */
+}
+
+.signup-box input::placeholder {
+  color: #666666; /* Medium Grey */
+}
+
+.signup-box input:focus {
+  background: #ffffff; /* White */
+  border: 1px solid #333333; /* Dark Grey */
+}
+
+/* 🔘 Sign Up Button */
+.signup-box button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff; /* Blue */
+  border: none;
+  border-radius: 6px;
+  color: #ffffff; /* White */
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.signup-box button:hover {
+  background: #0056b3; /* Darker Blue */
+}
+
+/* 🔗 Login Link */
+.signup-box p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666666; /* Medium Grey */
+}
+
+.signup-box a {
+  color: #007bff; /* Blue */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-box a:hover {
+  text-decoration: underline;
+}

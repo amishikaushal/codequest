@@ -1,0 +1,82 @@
+.mentor-container {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.mentor-hero {
+  background-color: #333;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.resources-section,
+.mentorship-section {
+  background: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.resources-section h2,
+.mentorship-section h2 {
+  color: #7c3d9c;
+}
+
+.resources-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resources-section li {
+  margin: 10px 0;
+}
+
+.resources-section a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resources-section a:hover {
+  color: #ff6600;
+}
+
+.mentor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.mentor-form input,
+.mentor-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.mentor-form button {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.mentor-form button:hover {
+  background-color: #e65c00;
+}
+
+.mentor-cards-section{
+
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+
+}

@@ -1,0 +1,220 @@
+/* 🎯 Main Container */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+  background-color: #F8F9FA; /* Light pastel gray */
+}
+
+/* 📌 Questions Table Container */
+.table-container {
+  flex: 1;
+  background: #F0F4F8; /* Soft pastel blue */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #6C757D; /* Muted gray */
+  text-align: center;
+  min-width: 300px; /* Ensure minimum width */
+}
+
+/* 🔍 Search Bar */
+.search-bar {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #CED4DA;
+  background: #E9ECEF; /* Light pastel gray */
+  color: #495057; /* Dark gray */
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🔽 Sorting Dropdown */
+.sort-dropdown {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  background: #E9ECEF; /* Light pastel gray */
+  color: #495057; /* Dark gray */
+  margin-bottom: 10px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 📌 Table Styles */
+.problem-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #F8F9FA; /* Light pastel gray */
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+}
+
+.problem-table th, .problem-table td {
+  padding: 10px;
+  border-bottom: 1px solid #DEE2E6;
+  text-align: center;
+  font-size: 14px;
+}
+
+.problem-table th {
+  background: #E0E7FF; /* Soft pastel blue */
+  color: #495057; /* Dark gray */
+  font-weight: bold;
+}
+
+.problem-table tbody tr:hover {
+  background: #F1F5F9; /* Muted pastel blue */
+  transition: 0.3s;
+}
+
+/* 🎨 Difficulty Colors */
+.difficulty-easy {
+  color: #A3E4D7; /* Pastel green */
+}
+
+.difficulty-medium {
+  color: #F9E79F; /* Pastel yellow */
+}
+
+.difficulty-hard {
+  color: #F5B7B1; /* Pastel red */
+}
+
+/* 📅 Daily Challenge Section */
+
+.calendar-container h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #495057; /* Dark gray */
+}
+
+.calendar-container p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #6C757D; /* Muted gray */
+}
+
+.challenge-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  background: #E0E7FF; /* Soft pastel blue */
+  border: none;
+  color: #495057; /* Dark gray */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.challenge-btn:hover {
+  background: #F1F5F9; /* Muted pastel blue */
+}
+
+/* 🖥️ Responsive Design */
+@media screen and (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-container, .calendar-container {
+    width: 100%;
+    margin-bottom: 15px; /* Add spacing between sections */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-bar, .sort-dropdown {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .problem-table th, .problem-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .calendar-container h2 {
+    font-size: 16px;
+  }
+
+  .calendar-container p {
+    font-size: 12px;
+  }
+
+  .challenge-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .page-info {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+  
+}
+.challenge-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.challenge-table th, .challenge-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.challenge-table th {
+  background-color: #f2f2f2;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+}
+
+.pagination span {
+  font-weight: bold;
+}

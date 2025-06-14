@@ -1,0 +1,84 @@
+/* Centering the login form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7e8ff; /* Soft Lavender */
+}
+
+/* Login Box */
+.login-box {
+  background: #ffffff; /* White */
+  color: #6c757d; /* Muted Grey */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+
+/* Heading */
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #4a4a4a; /* Dark Grey */
+}
+
+/* Input Fields */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #dcdcdc; /* Light Grey */
+  border-radius: 6px;
+  font-size: 16px;
+  background: #fef6e4; /* Soft Cream */
+  color: #4a4a4a; /* Dark Grey */
+}
+
+.login-box input::placeholder {
+  color: #9e9e9e; /* Medium Grey */
+}
+
+.login-box input:focus {
+  background: #ffffff; /* White */
+  border: 1px solid #6c757d; /* Muted Grey */
+  outline: none;
+}
+
+/* Login Button */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #ffd6e8; /* Soft Pink */
+  border: none;
+  border-radius: 6px;
+  color: #4a4a4a; /* Dark Grey */
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.login-box button:hover {
+  background: #ffb3c6; /* Slightly Darker Pink */
+}
+
+/* Sign-up Link */
+.login-box p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #6c757d; /* Muted Grey */
+}
+
+.login-box a {
+  color: #a390ee; /* Soft Purple */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-box a:hover {
+  text-decoration: underline;
+}

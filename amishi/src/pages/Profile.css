@@ -1,0 +1,109 @@
+.profile-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #e8e1f3; /* Soft Light Purple */
+  color: black;
+  min-height: 100vh;
+}
+
+/* Sidebar Section */
+.profile-sidebar {
+  width: 300px;
+  background-color: #d4c3ea; /* Medium Purple */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes logout button to bottom */
+  height: 100vh; /* Full viewport height */
+}
+
+.profile-sidebar h2 {
+  color: #5a3d8a; /* Dark Purple */
+}
+
+/* Edit Profile Button */
+.edit-profile-btn {
+  display: inline-block;
+  background: #8a6dcf; /* Light Purple */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.edit-profile-btn:hover {
+  background: #7155b5; /* Slightly Darker Purple */
+}
+
+/* Stats & Skills */
+.stats, .skills {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e3d7f3; /* Lightened Purple */
+  border-radius: 8px;
+}
+
+.stats h3, .skills h3 {
+  color: #5a3d8a; /* Dark Purple */
+}
+
+/* Main Profile Content */
+.profile-content {
+  flex-grow: 1;
+}
+
+.stats-box, .badges-box, .submission-history {
+  background-color: #d4c3ea; /* Light Purple */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: #5a3d8a; /* Dark Purple */
+}
+
+/* Recent Problems */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background: #8a6dcf; /* Medium Purple */
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+ul li:hover {
+  background: #7155b5; /* Slightly Darker */
+}
+
+/* Logout Button (Fixed at Bottom) */
+.logout-button {
+  background-color: #3e0404;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto; /* Pushes to bottom */
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #7f0b0b;
+}

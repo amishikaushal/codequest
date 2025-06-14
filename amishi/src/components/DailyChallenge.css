@@ -1,0 +1,53 @@
+.daily-challenge-section {
+  margin: 30px auto;
+  padding: 30px;
+  background: #f3e8ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.daily-challenge-section h2 {
+  text-align: center;
+  color: #6a0dad;
+  margin-bottom: 20px;
+}
+
+.question-container {
+  flex: 1; /* Reduced size to balance layout */
+  background: white;
+  padding: 15px; /* Reduced padding */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.solve-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #6a0dad;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.solve-btn:hover {
+  background: #6a0dad;
+}
+
+.current-day {
+  background: #6a0dad !important;
+  color: white !important;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .daily-challenge-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .calendar-container {
+    width: 100%;
+  }
+}
