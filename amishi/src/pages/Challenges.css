@@ -1,23 +1,23 @@
 /* 🌟 Main Layout */
 .challenges-page {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  flex-direction: row;
   gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
 .left-section {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex: 1;
+  min-width: 300px;
 }
 
 .right-section {
-  width: 30%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  width: 400px;
+  min-width: 300px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
 }
 
 /* ✅ Questions Section */
@@ -196,11 +196,11 @@
 }
 
 .right-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  padding: 20px;
+  width: 400px;
+  min-width: 300px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
 }
 
 .progress-card {
@@ -251,5 +251,30 @@
   margin-top: 16px;
   font-weight: bold;
   color: #2d0353;
+}
+
+.user-progress {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .challenges-page {
+    flex-direction: column;
+  }
+  
+  .right-section {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .user-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 

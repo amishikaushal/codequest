@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const challengeRoutes = require('./routes/challengeRoutes.js');
 const userroutes = require('./routes/userroutes.js'); 
+const flashcardsRoutes = require("./routes/flashcards");
 
 // Initialize express app
 const app = express();
@@ -39,6 +40,7 @@ connectDB();
 // Routes
 app.use('/api/challenges', challengeRoutes);
 app.use('/api/users', userroutes); 
+app.use("/flashcards", flashcardsRoutes);
 
 
 // Test route

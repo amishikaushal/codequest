@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import DailyChallengeCalendar from "../components/DailyChallengeCalendar";
-import Question from "../components/Question";
+
 import { useState } from "react";
+import Flashcards from "../components/Flashcards";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -80,15 +81,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Daily Challenge Calendar + Question List Section */}
+      {/* Daily Challenge Section */}
       <section className="daily-challenge-section">
-        <h2 className="daily-challenge">Daily Challenge</h2>
-        <div className="daily-challenge-container">
-          <div className="question-container">
-            <Question />
+        <div className="daily-content">
+          <div className="flashcards-area">
+            <h2>Practice Cards</h2>
+            <div className="flashcards-container">
+              <Flashcards />
+            </div>
           </div>
-          <div className="calendar-container">
-            <DailyChallengeCalendar />
+          <div className="calendar-area">
+            <h2>Daily Progress</h2>
+            <div className="calendar-container">
+              <DailyChallengeCalendar />
+            </div>
           </div>
         </div>
       </section>

@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Challenges.css";
-import {
-  PieChart,
-  Pie,
-  Tooltip,
-  Cell,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { PieChart } from '@mui/x-charts/PieChart';
 
 const API_URL = "http://localhost:5050/api";
 const CHALLENGES_PER_PAGE = 10;
@@ -211,32 +204,32 @@ const ChallengesPage = () => {
       </div>
 
       {/* User Progress Pie Chart */}
-      <div className="right-section" style={{ maxWidth: "500px", margin: "0 auto" }}>
+      <div className="right-section">
         <div className="user-progress">
           <h2>📊 Your Progress</h2>
           {userProgress ? (
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie
-                  data={[
-                    { name: "Easy", value: userProgress.easySolved },
-                    { name: "Medium", value: userProgress.mediumSolved },
-                    { name: "Hard", value: userProgress.hardSolved },
-                  ]}
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={100}
-                  label
-                  dataKey="value"
-                >
-                  <Cell fill="#82ca9d" />
-                  <Cell fill="#8884d8" />
-                  <Cell fill="#ff8042" />
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
+            <PieChart
+              series={[
+                {
+                  data: [
+                    { id: 0, value: userProgress.easySolved, label: 'Easy', color: '#82ca9d' },
+                    { id: 1, value: userProgress.mediumSolved, label: 'Medium', color: '#8884d8' },
+                    { id: 2, value: userProgress.hardSolved, label: 'Hard', color: '#ff8042' }
+                  ],
+                  innerRadius: 30,
+                  outerRadius: 100,
+                  paddingAngle: 5,
+                  cornerRadius: 5,
+                  startAngle: -45,
+                  endAngle: 225,
+                  cx: 150,
+                  cy: 150,
+                }
+              ]}
+              width={300}
+              height={300}
+              margin={{ right: 0, left: 0, top: 10, bottom: 10 }}
+            />
           ) : (
             <p>Loading stats...</p>
           )}
