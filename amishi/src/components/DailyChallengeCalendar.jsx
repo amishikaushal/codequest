@@ -64,24 +64,7 @@ const DailyChallengeCalendar = () => {
       />
 
       {/* Weekly Premium Section */}
-      <div className="weekly-premium">
-        <h3>Weekly Premium <span>❓</span></h3>
-        <p>6 days left</p>
-        <div className="weeks">
-          <span className="week completed">W1</span>
-          <span className="week completed">W2</span>
-          <span className="week completed">W3</span>
-          <span className="week active">W4</span>
-          <span className="week">W5</span>
-        </div>
-      </div>
-
-      {/* Redeem Section */}
-      <div className="redeem-section">
-        <span className="redeem-icon">🟢 {redeemPoints}</span>
-        <button className="redeem-btn">Redeem</button>
-        <a href="#">Rules</a>
-      </div>
+      
     </div>
   );
 };

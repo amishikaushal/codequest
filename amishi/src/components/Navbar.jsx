@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ProfileDropdown from "./ProfileDropdown";
 import { FaUserCircle } from "react-icons/fa";
 import supabase from "../utils/supabaseClient"; // Supabase client
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const [user, setUser] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,6 +29,17 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <nav className="navbar">
       {/* Left: Logo */}
@@ -40,7 +54,6 @@ const Navbar = () => {
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/challenges">Challenges</Link></li>
-          
           <li><Link to="/mentor">Mentorship</Link></li>
         </ul>
       </div>
@@ -48,9 +61,19 @@ const Navbar = () => {
       {/* Right: Auth Buttons or Profile */}
       <div className="navbar-right">
         {user ? (
-          <button className="profile-section" onClick={() => navigate("/profile")}>
-            <FaUserCircle size={28} className="user-icon" />
-          </button>
+          <div className="profile-section" ref={dropdownRef}>
+            <button 
+              className="profile-icon"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <FaUserCircle size={28} className="user-icon" />
+            </button>
+            <ProfileDropdown 
+              setIsLoggedIn={setIsLoggedIn}
+              isOpen={isDropdownOpen}
+              onClose={() => setIsDropdownOpen(false)}
+            />
+          </div>
         ) : (
           <div className="auth-buttons">
             <button onClick={() => navigate("/login")}>Login</button>

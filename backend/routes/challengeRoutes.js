@@ -72,4 +72,35 @@ router.get('/contest/:name', async (req, res) => {
   }
 });
 
+// GET random daily challenge
+router.get('/daily', async (req, res) => {
+  try {
+    // Get total count of challenges
+    const count = await Challenge.countDocuments();
+    if (count === 0) {
+      return res.status(404).json({ message: 'No challenges available' });
+    }
+
+    // Get today's date as a seed for consistent daily challenge
+    const today = new Date();
+    const dateString = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+    
+    // Use the date string to generate a consistent index for today
+    const seed = dateString.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    const index = seed % count;
+
+    // Fetch the challenge at that index
+    const challenge = await Challenge.findOne().skip(index);
+    
+    if (!challenge) {
+      return res.status(404).json({ message: 'Failed to get daily challenge' });
+    }
+
+    res.json(challenge);
+  } catch (err) {
+    console.error('Error in daily challenge route:', err);
+    res.status(500).json({ message: 'Server error fetching daily challenge' });
+  }
+});
+
 module.exports = router;

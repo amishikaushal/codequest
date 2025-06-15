@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Challenges from "./pages/Challenges";
 import Leaderboard from "./pages/LeaderBoard";
-import Profile from "./pages/Profile";
+
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Questions from "./components/Question";
@@ -62,7 +62,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/challenges" element={<Challenges />} />
          
-          <Route path="/profile" element={user ? <Profile /> : <Login />} />
+          
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/questions" element={<Questions />} />
