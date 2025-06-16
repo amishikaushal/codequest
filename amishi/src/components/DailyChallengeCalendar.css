@@ -34,15 +34,22 @@
   background: #444;
 }
 
+.react-calendar__tile:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .current-day {
-  background: #4caf50 !important;
+  background-color: #4CAF50 !important;
   color: white !important;
   border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .completed-day {
-  color: red;
-  font-size: 1.2rem;
+  background-color: #90EE90 !important;
+  border-radius: 50%;
 }
 
 /* Weekly Premium */

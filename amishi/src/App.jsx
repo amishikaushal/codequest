@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Challenges from "./pages/Challenges";
-import Leaderboard from "./pages/LeaderBoard";
+
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";

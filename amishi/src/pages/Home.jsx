@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
-import DailyChallengeCalendar from "../components/DailyChallengeCalendar";
+// import DailyChallengeCalendar from "../components/DailyChallengeCalendar";
 
 import { useState } from "react";
 import Flashcards from "../components/Flashcards";
@@ -90,12 +90,7 @@ const Home = () => {
               <Flashcards />
             </div>
           </div>
-          <div className="calendar-area">
-            <h2>Daily Progress</h2>
-            <div className="calendar-container">
-              <DailyChallengeCalendar />
-            </div>
-          </div>
+          
         </div>
       </section>
 

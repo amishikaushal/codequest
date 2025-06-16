@@ -140,7 +140,12 @@ body {
   padding: 2rem;
   background-color: #f8f9fa;
   border-radius: 10px;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .daily-content {
@@ -152,10 +157,45 @@ body {
 }
 
 .flashcards-area {
-  padding: 1rem;
+  padding: 2rem;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  height: 400px;
+  width: 100%;
+  max-width: 800px; /* Limit maximum width */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-y: auto; /* Enables vertical scrolling */
+  height: calc(100% - 60px); /* Subtracts the height of the h2 title */
+  padding-right: 10px; /* Prevents content from touching scrollbar */
+}
+
+/* Custom scrollbar styling */
+.flashcards-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.flashcards-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.flashcards-container::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.flashcards-container::-webkit-scrollbar-thumb:hover {
+  background: #501284;
 }
 
 .calendar-area {
@@ -178,87 +218,104 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(20, 20, 20, 0.6);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: fadeIn 0.4s ease;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
 }
 
 .popup {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 2rem;
+  border-radius: 20px;
+  padding: 2.5rem;
   width: 90%;
-  max-width: 500px;
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
-  animation: slideIn 0.4s ease-out;
+  max-width: 550px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   text-align: center;
 }
 
 .popup h3 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #fff;
-  background: linear-gradient(135deg, #4b6cb7, #182848);
-  padding: 1rem;
-  margin: -2rem -2rem 1rem -2rem;
-  border-radius: 16px 16px 0 0;
+  background: linear-gradient(135deg, var(--primary-color), #501284);
+  padding: 1.2rem;
+  margin: -2.5rem -2.5rem 1.5rem -2.5rem;
+  border-radius: 20px 20px 0 0;
+  letter-spacing: 0.5px;
 }
 
 .popup-description {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-  text-align: justify;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 1rem;
 }
 
 .popup ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  background: #f8f9fa;
+  border-radius: 12px;
 }
 
 .popup li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   position: relative;
-  padding-left: 1.2rem;
+  padding: 0.8rem 1rem 0.8rem 2rem;
   font-weight: 500;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.popup li:hover {
+  transform: translateX(5px);
 }
 
 .popup li::before {
-  content: "🔗";
+  content: "→";
   position: absolute;
-  left: 0;
+  left: 0.8rem;
+  color: var(--primary-color);
 }
 
 .popup a {
-  color: #e5eaf0;
+  color: var(--primary-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .popup a:hover {
-  color: #c1aecb;
-  text-decoration: underline;
+  color: #501284;
 }
 
 .close-btn {
-  margin-top: 1.5rem;
-  padding: 10px 20px;
-  background: #6d5879;
+  margin-top: 2rem;
+  padding: 12px 28px;
+  background: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .close-btn:hover {
-  background: #d32f2f;
+  background: #501284;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 13, 173, 0.3);
 }
 
 /* 🔄 Animations */
@@ -290,7 +347,6 @@ body {
   }
 }
 
-/* 📱 Responsive Design */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -311,9 +367,14 @@ body {
     grid-template-columns: 1fr;
   }
   
-  .flashcards-area,
-  .calendar-area {
-    padding: 0.5rem;
+  .flashcards-area {
+    height: 350px; /* Slightly smaller height on mobile */
+    padding: 1rem;
+  }
+
+  .daily-challenge-section {
+    padding: 1rem;
+    margin: 1rem auto;
   }
 
   .daily-challenge-container {
@@ -323,5 +384,20 @@ body {
 
   .question-container {
     width: 100%;
+  }
+
+  .popup {
+    width: 95%;
+    padding: 2rem;
+  }
+
+  .popup h3 {
+    font-size: 1.4rem;
+    margin: -2rem -2rem 1.2rem -2rem;
+  }
+
+  .popup-description {
+    font-size: 1rem;
+    padding: 0 0.5rem;
   }
 }

@@ -40,7 +40,15 @@ const challengeSchema = new mongoose.Schema({
     type: String,
   },
   tags: [String],
+  isDailyChallenge: {
+    type: Boolean,
+    default: false
+  },
+  dailyChallengeDate: {
+    type: Date
+  }
 });
 
+challengeSchema.index({ isDailyChallenge: 1, dailyChallengeDate: 1 });
 
 module.exports = mongoose.models.Challenge || mongoose.model('Challenge', challengeSchema);

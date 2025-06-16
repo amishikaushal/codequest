@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./DailyChallengeCalendar.css";
 
+const API_URL = "http://localhost:5050/api";
+
 const DailyChallengeCalendar = () => {
   const [date, setDate] = useState(new Date());
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
-  const [redeemPoints, setRedeemPoints] = useState(0);
-  const navigate = useNavigate(); // React Router navigation
+  const [completedDays, setCompletedDays] = useState([]);
+  const navigate = useNavigate();
 
   function getTimeLeft() {
     const now = new Date();
@@ -33,13 +35,46 @@ const DailyChallengeCalendar = () => {
     return `${h}:${m}:${s}`;
   };
 
-  // Dummy data for completed challenges
-  const completedDays = [1, 5, 10, 15, 20];
+  // Check if a date is today
+  const isToday = (someDate) => {
+    const today = new Date();
+    return (
+      someDate.getDate() === today.getDate() &&
+      someDate.getMonth() === today.getMonth() &&
+      someDate.getFullYear() === today.getFullYear()
+    );
+  };
+
+  // Fetch completed days on mount
+  useEffect(() => {
+    const fetchCompletedDays = async () => {
+      try {
+        const email = localStorage.getItem("email");
+        const response = await fetch(`${API_URL}/users/completed-days/${email}`);
+        if (response.ok) {
+          const data = await response.json();
+          setCompletedDays(data.completedDays || []);
+        }
+      } catch (error) {
+        console.error("Error fetching completed days:", error);
+      }
+    };
+
+    fetchCompletedDays();
+  }, []);
 
   // Function to navigate to challenge page when a date is clicked
-  const handleDayClick = (selectedDate) => {
-    const challengeDate = selectedDate.getDate();
-    navigate(`/challenge/${challengeDate}`); // Navigate to challenge page
+  const handleDayClick = async (selectedDate) => {
+    if (isToday(selectedDate)) {
+      try {
+        const response = await fetch(`${API_URL}/challenges/daily`);
+        if (!response.ok) throw new Error('Failed to fetch daily challenge');
+        const challenge = await response.json();
+        navigate(`/challenge/${challenge._id}`);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
   };
 
   return (
@@ -47,7 +82,6 @@ const DailyChallengeCalendar = () => {
       <h2>Day {date.getDate()}</h2>
       <p className="timer">⏳ {formatTime(timeLeft)} left</p>
 
-      {/* Calendar */}
       <Calendar
         value={date}
         onChange={(selectedDate) => {
@@ -55,16 +89,14 @@ const DailyChallengeCalendar = () => {
           handleDayClick(selectedDate);
         }}
         tileClassName={({ date }) =>
-          date.getDate() === new Date().getDate()
+          isToday(date)
             ? "current-day"
             : completedDays.includes(date.getDate())
             ? "completed-day"
             : ""
         }
+        tileDisabled={({ date }) => !isToday(date)}
       />
-
-      {/* Weekly Premium Section */}
-      
     </div>
   );
 };

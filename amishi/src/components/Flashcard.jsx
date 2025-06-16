@@ -1,20 +1,27 @@
+// Flashcard.jsx
 import React from "react";
 
-
 const Flashcard = ({ card, onStatusChange }) => {
-  const handleClick = () => {
-    const newStatus = card.status === "learned" ? "repeat" : "learned";
-    onStatusChange(card._id, newStatus);
-  };
+  const statuses = ["new", "learning", "mastered"];
 
   return (
-    <div className={`flashcard ${card.status}`}>
+    <div className="flashcard">
       <h3>{card.question}</h3>
-      <p><strong>Topic:</strong> {card.topic}</p>
-      <details><summary>Answer</summary><p>{card.answer}</p></details>
-      <button onClick={handleClick}>
-        Mark as {card.status === "learned" ? "Repeat" : "Learned"}
-      </button>
+      <p><strong>Answer:</strong> {card.answer}</p>
+      <p><small>Topic: {card.topic}</small></p>
+      <div>
+        <label>Status: </label>
+        <select
+          value={card.status}
+          onChange={(e) => onStatusChange(card._id, e.target.value)}
+        >
+          {statuses.map((status) => (
+            <option key={status} value={status}>
+              {status.charAt(0).toUpperCase() + status.slice(1)}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 };
