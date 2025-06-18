@@ -208,28 +208,44 @@ const ChallengesPage = () => {
         <div className="user-progress">
           <h2>📊 Your Progress</h2>
           {userProgress ? (
-            <PieChart
-              series={[
-                {
-                  data: [
-                    { id: 0, value: userProgress.easySolved, label: 'Easy', color: '#82ca9d' },
-                    { id: 1, value: userProgress.mediumSolved, label: 'Medium', color: '#8884d8' },
-                    { id: 2, value: userProgress.hardSolved, label: 'Hard', color: '#ff8042' }
-                  ],
-                  innerRadius: 30,
-                  outerRadius: 100,
-                  paddingAngle: 5,
-                  cornerRadius: 5,
-                  startAngle: -45,
-                  endAngle: 225,
-                  cx: 150,
-                  cy: 150,
-                }
-              ]}
-              width={300}
-              height={300}
-              margin={{ right: 0, left: 0, top: 10, bottom: 10 }}
-            />
+            <div>
+              <PieChart
+                series={[
+                  {
+                    data: [
+                      { id: 0, value: userProgress.easySolved, label: 'Easy', color: '#82ca9d' },
+                      { id: 1, value: userProgress.mediumSolved, label: 'Medium', color: '#8884d8' },
+                      { id: 2, value: userProgress.hardSolved, label: 'Hard', color: '#ff8042' }
+                    ],
+                    innerRadius: 30,
+                    outerRadius: 100,
+                    paddingAngle: 5,
+                    cornerRadius: 5,
+                    startAngle: -45,
+                    endAngle: 225,
+                    cx: 150,
+                    cy: 150,
+                  }
+                ]}
+                width={300}
+                height={300}
+                margin={{ right: 0, left: 0, top: 10, bottom: 10 }}
+              />
+              <div className="stats-summary">
+                <div className="stat-item">
+                  <span style={{ color: '#82ca9d' }}>●</span> Easy: {userProgress.easySolved} solved
+                  ({((userProgress.easySolved / (userProgress.easySolved + userProgress.mediumSolved + userProgress.hardSolved)) * 100).toFixed(1)}%)
+                </div>
+                <div className="stat-item">
+                  <span style={{ color: '#8884d8' }}>●</span> Medium: {userProgress.mediumSolved} solved
+                  ({((userProgress.mediumSolved / (userProgress.easySolved + userProgress.mediumSolved + userProgress.hardSolved)) * 100).toFixed(1)}%)
+                </div>
+                <div className="stat-item">
+                  <span style={{ color: '#ff8042' }}>●</span> Hard: {userProgress.hardSolved} solved
+                  ({((userProgress.hardSolved / (userProgress.easySolved + userProgress.mediumSolved + userProgress.hardSolved)) * 100).toFixed(1)}%)
+                </div>
+              </div>
+            </div>
           ) : (
             <p>Loading stats...</p>
           )}

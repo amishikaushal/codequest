@@ -8,14 +8,14 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Challenges from "./pages/Challenges";
-
-
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Questions from "./components/Question";
 import QuestionDetail from "./pages/QuestionDetail";
 import Mentor from "./pages/Mentor";
 import SolveQuestion from "./pages/SolveQuestion";
+import EditProfile from "./components/EditProfile";
+import HelpSupport from "./components/HelpSupport";
 import "./App.css";
 
 function App() {
@@ -61,14 +61,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/challenges" element={<Challenges />} />
-         
-          
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/questions" element={<Questions />} />
           <Route path="/questions/:id" element={<QuestionDetail />} />
           <Route path="/mentor" element={<Mentor />} />
           <Route path="/solve/:id" element={user ? <SolveQuestion /> : <Login />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/help-support" element={<HelpSupport />} />
         </Routes>
       </main>
 

@@ -149,14 +149,14 @@ body {
 }
 
 .daily-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem 0;
 }
 
 .flashcards-area {
+  flex: 1;
   padding: 2rem;
   background: white;
   border-radius: 8px;
@@ -199,10 +199,17 @@ body {
 }
 
 .calendar-area {
+  flex: 1;
   padding: 1rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.calendar-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .daily-challenge-section h2 {
@@ -364,12 +371,16 @@ body {
   }
 
   .daily-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
   
   .flashcards-area {
     height: 350px; /* Slightly smaller height on mobile */
     padding: 1rem;
+  }
+
+  .calendar-area {
+    margin-top: 2rem;
   }
 
   .daily-challenge-section {
