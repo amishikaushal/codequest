@@ -6,6 +6,28 @@ import { PieChart } from '@mui/x-charts/PieChart';
 const API_URL = "http://localhost:5050/api";
 const CHALLENGES_PER_PAGE = 10;
 
+const getDateString = () => {
+  return new Date().toISOString().split('T')[0];
+};
+
+const getRandomChallenge = (challenges) => {
+  if (!challenges || challenges.length === 0) return null;
+  
+  // Get today's date string to use as seed
+  const dateStr = getDateString();
+  
+  // Create a seeded random number based on the date
+  let seedValue = Array.from(dateStr).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const seededRandom = () => {
+    seedValue = (seedValue * 9301 + 49297) % 233280;
+    return seedValue / 233280;
+  };
+  
+  // Use the seeded random to get today's challenge
+  const index = Math.floor(seededRandom() * challenges.length);
+  return challenges[index];
+};
+
 const ChallengesPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -51,7 +73,15 @@ const ChallengesPage = () => {
           completed: solvedSet.has(c._id),
         }));
 
-        setChallenges(enrichedChallenges);
+        // Get daily challenge using the seeded random function
+        const dailyChallenge = getRandomChallenge(enrichedChallenges);
+        
+        // Remove the daily challenge from the main list to avoid duplication
+        const remainingChallenges = enrichedChallenges.filter(
+          c => c._id !== dailyChallenge._id
+        );
+
+        setChallenges([dailyChallenge, ...remainingChallenges]);
         setUserProgress(
           progData.progress || {
             easySolved: 0,
