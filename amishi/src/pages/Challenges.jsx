@@ -2,31 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Challenges.css";
 import { PieChart } from '@mui/x-charts/PieChart';
+import { getRandomChallenge } from '../utils/dailyChallenge';
 
 const API_URL = "http://localhost:5050/api";
 const CHALLENGES_PER_PAGE = 10;
-
-const getDateString = () => {
-  return new Date().toISOString().split('T')[0];
-};
-
-const getRandomChallenge = (challenges) => {
-  if (!challenges || challenges.length === 0) return null;
-  
-  // Get today's date string to use as seed
-  const dateStr = getDateString();
-  
-  // Create a seeded random number based on the date
-  let seedValue = Array.from(dateStr).reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const seededRandom = () => {
-    seedValue = (seedValue * 9301 + 49297) % 233280;
-    return seedValue / 233280;
-  };
-  
-  // Use the seeded random to get today's challenge
-  const index = Math.floor(seededRandom() * challenges.length);
-  return challenges[index];
-};
 
 const ChallengesPage = () => {
   const navigate = useNavigate();
@@ -154,7 +133,10 @@ const ChallengesPage = () => {
         {todayChallenge && (
           <div className="daily-challenge">
             <h2>Today's Challenge: {todayChallenge.title || todayChallenge.name}</h2>
-            <button onClick={() => navigate(`/challenge/${todayChallenge._id}`)}>
+            <button  onClick={() =>
+                            window.open(todayChallenge.links?.leetcode || todayChallenge.links?.gfg, "_blank")
+                          }
+                          disabled={!todayChallenge.links}>
               Start Challenge
             </button>
           </div>
