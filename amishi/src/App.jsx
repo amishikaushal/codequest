@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import supabase from "./utils/supabaseClient";
@@ -17,6 +17,35 @@ import SolveQuestion from "./pages/SolveQuestion";
 import EditProfile from "./components/EditProfile";
 import HelpSupport from "./components/HelpSupport";
 import "./App.css";
+
+// Add ProtectedRoute component at the top of the file
+const ProtectedRoute = ({ children }) => {
+  const [session, setSession] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      setLoading(false);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!session) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
 
 function App() {
   const [user, setUser] = useState(null);
@@ -59,16 +88,54 @@ function App() {
 
       <main className="content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/challenges" element={<Challenges />} />
+          {/* Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/questions" element={<Questions />} />
-          <Route path="/questions/:id" element={<QuestionDetail />} />
-          <Route path="/mentor" element={<Mentor />} />
-          <Route path="/solve/:id" element={user ? <SolveQuestion /> : <Login />} />
-          <Route path="/edit-profile" element={<EditProfile />} />
-          <Route path="/help-support" element={<HelpSupport />} />
+
+          {/* Protected Routes */}
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          } />
+          <Route path="/challenges" element={
+            <ProtectedRoute>
+              <Challenges />
+            </ProtectedRoute>
+          } />
+          <Route path="/questions" element={
+            <ProtectedRoute>
+              <Questions />
+            </ProtectedRoute>
+          } />
+          <Route path="/questions/:id" element={
+            <ProtectedRoute>
+              <QuestionDetail />
+            </ProtectedRoute>
+          } />
+          <Route path="/mentor" element={
+            <ProtectedRoute>
+              <Mentor />
+            </ProtectedRoute>
+          } />
+          <Route path="/solve/:id" element={
+            <ProtectedRoute>
+              <SolveQuestion />
+            </ProtectedRoute>
+          } />
+          <Route path="/edit-profile" element={
+            <ProtectedRoute>
+              <EditProfile />
+            </ProtectedRoute>
+          } />
+          <Route path="/help-support" element={
+            <ProtectedRoute>
+              <HelpSupport />
+            </ProtectedRoute>
+          } />
+
+          {/* Catch all route */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
 

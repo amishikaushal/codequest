@@ -40,6 +40,16 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      await supabase.auth.signOut();
+      localStorage.removeItem('email');
+      navigate('/login');
+    } catch (error) {
+      console.error('Error logging out:', error.message);
+    }
+  };
+
   return (
     <nav className="navbar">
       {/* Left: Logo */}

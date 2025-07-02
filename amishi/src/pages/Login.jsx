@@ -9,29 +9,34 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError(null);
+    setLoading(true);
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data: { session }, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
       if (error) throw error;
 
-     
-      localStorage.setItem("email", email);
-
-      toast.success("Logged in successfully! 🎉");
-      console.log("Logged in:", data);
-      navigate("/profile"); 
+      if (session) {
+        localStorage.setItem("email", email);
+        toast.success("Logged in successfully! 🎉");
+        
+        // Remove the delay and navigate to home page
+        navigate("/"); // Assuming "/" is your home page route
+      }
     } catch (err) {
       setError(err.message);
       toast.error(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -47,6 +52,7 @@ const Login = () => {
             value={email} 
             onChange={(e) => setEmail(e.target.value)} 
             required 
+            disabled={loading}
           />
           <input 
             type="password" 
@@ -54,8 +60,11 @@ const Login = () => {
             value={password} 
             onChange={(e) => setPassword(e.target.value)} 
             required 
+            disabled={loading}
           />
-          <button type="submit">Login</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
         </form>
         <p>
           Don't have an account? <Link to="/signup">Sign Up</Link>
