@@ -47,8 +47,7 @@ codequest/
 ├── backend/ # Backend (Node.js + Express + MongoDB)
 │ ├── models/ # Mongoose schemas
 │ ├── routes/ # API endpoints
-│ └── server.js # Backend entry point
-├── .env
+│ └── server.js and env # Backend entry point
 ├── .gitignore
 ├── README.md # Project overview
 └── vite.config.js
@@ -56,6 +55,12 @@ codequest/
 ```
 
 ---
+### 🔍 Homepage Preview
+
+![CodeQuest Homepage](./assets/homeup.png)
+
+
+
 ## 🚀 Running Locally
 
 ### 1. Clone the Repository
