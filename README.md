@@ -1,56 +1,91 @@
-🚀 CodeQuest – DSA Learning Platform
-CodeQuest is a full-stack educational platform designed to help learners master Data Structures & Algorithms (DSA) through a structured, interactive, and gamified experience.
+# 🧠 CodeQuest – DSA Learning Platform
 
-With over 500+ curated coding problems, performance tracking, flashcards, and mentorship features, CodeQuest keeps learners consistent, confident, and job-ready.
+**CodeQuest** is a full-stack educational platform designed to help learners master **Data Structures & Algorithms (DSA)** through a structured, interactive, and gamified experience.
 
-✨ Features
-✅ 500+ Structured DSA Questions categorized by difficulty
+With **500+ curated coding problems**, performance tracking, flashcards, and mentorship features, CodeQuest keeps learners consistent, confident, and job-ready.
 
-📌 Manual Progress Tracker with checkbox UI
+---
 
-📅 Daily Coding Challenge Calendar (rotates every day)
+## ✨ Features
 
-⚡ Live Performance Tracking with animated pie charts
+- ✅ **500+ Structured DSA Questions** categorized by difficulty  
+- 📌 **Manual Progress Tracker** with checkbox UI  
+- 📅 **Daily Coding Challenge Calendar** (rotates every day)  
+- ⚡ **Live Performance Tracking** with animated pie charts  
+- 🧠 **100+ One-Line FAQ Flashcards** for rapid DSA revision  
+- 🧾 **Practice Cards** covering edge cases & tricky concepts  
+- 🔐 **Supabase Auth** with email verification support  
+- 👥 **Mentorship Portal** for career guidance & mock interviews  
 
-🧠 100+ One-Line FAQ Flashcards for rapid DSA revision
+---
 
-📄 Practice Cards covering edge cases & tricky concepts
+## 🛠️ Tech Stack
 
-🔐 Supabase Auth with email verification support
+| Layer     | Technology                            |
+|-----------|----------------------------------------|
+| Frontend  | React, JavaScript, HTML, CSS           |
+| Backend   | Node.js, Express                       |
+| Database  | MongoDB                                |
+| Auth      | Supabase Authentication                |
+| Tooling   | Vite, CSS Animations, Supabase         |
 
-🧑‍💼 Mentorship Portal for career guidance & mock interviews
+---
 
-🧱 Tech Stack
-Frontend: React, JavaScript, HTML, CSS
+## 📁 Project Structure
 
-Backend: Node.js, Express
+codequest/
+├── amishi/ # Frontend (React + Vite)
+│ ├── public/
+│ └── src/
+│ ├── assets/ # Images, icons, logos
+│ ├── components/ # Reusable UI elements
+│ ├── pages/ # Flashcards, Challenges, Auth pages
+│ ├── styles/ # CSS files
+│ ├── utils/ # Helper functions
+│ ├── App.jsx
+│ └── main.jsx
+├── backend/ # Backend (Node.js + Express + MongoDB)
+│ ├── models/ # Mongoose schemas
+│ ├── routes/ # API endpoints
+│ └── server.js # Backend entry point
+├── .env
+├── .gitignore
+├── README.md # Project overview
+└── vite.config.js
 
-Database: MongoDB
 
-Auth: Supabase (email verification)
 
-Tooling: Vite, CSS Animations
+---
 
-📁 Project Structure
-<pre> codequest/ ├── amishi/ # Frontend (React + Vite) │ ├── public/ │ └── src/ │ ├── assets/ # Images, icons, logos │ ├── components/ # Reusable UI elements │ ├── pages/ # Flashcards, Challenges, Auth pages │ ├── styles/ # CSS files │ ├── utils/ # Helper functions │ ├── App.jsx │ └── main.jsx │ ├── backend/ # Backend (Node.js + Express + MongoDB) │ ├── models/ # Mongoose schemas │ ├── routes/ # API endpoints │ └── server.js # Backend entry point │ ├── .env # Environment variables ├── .gitignore ├── README.md # Project overview └── vite.config.js </pre>
-⚙️ Running Locally
-1. Clone the Repository
-bash
-Copy
-Edit
+## 🚀 Running Locally
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/amishikaushal/codequest.git
 cd codequest
+
 2. Set Up the Frontend
-bash
-Copy
-Edit
+
 cd amishi
 npm install
 npm run dev
+
+Frontend runs on: http://localhost:5173 (or your default Vite port)
+
 3. Set Up the Backend
-bash
-Copy
-Edit
-cd backend
+
+cd ../backend
 npm install
 node server.js
+
+Backend runs on: http://localhost:5000
+
+
+🚧 Deployment
+Note: This project is not yet deployed.
+For a demonstration or walkthrough, please refer to the GitHub repository or contact me.
+
+📬 Contact
+Made with ❤️ by Amishi Kaushal
+📧 Reach me via LinkedIn or GitHub Discussions.
