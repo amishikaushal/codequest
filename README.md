@@ -32,7 +32,7 @@ With **500+ curated coding problems**, performance tracking, flashcards, and men
 ---
 
 ## 📁 Project Structure
-
+```bash
 codequest/
 ├── amishi/ # Frontend (React + Vite)
 │ ├── public/
@@ -53,7 +53,7 @@ codequest/
 ├── README.md # Project overview
 └── vite.config.js
 
-
+```
 
 ---
 ## 🚀 Running Locally
@@ -72,6 +72,7 @@ cd amishi
 npm install
 npm run dev
 ```
+Frontend runs on: http://localhost:5173 (or your default Vite port)
 
 ### 3. Set Up the Backend
 
