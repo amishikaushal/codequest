@@ -57,7 +57,7 @@ codequest/
 ---
 ### 🔍 Homepage Preview
 
-![CodeQuest Homepage](./src/assets/homeup.png)
+![CodeQuest Homepage](./amishi/src/assets/homeup.png)
 
 
 
