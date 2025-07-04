@@ -55,10 +55,15 @@ codequest/
 ```
 
 ---
-### 🔍 Homepage Preview
+### 🔍 Website Preview
 
 ![CodeQuest Homepage](./amishi/src/assets/homeup.png)
+![CodeQuest Homepage](./amishi/src/assets/homedown.png)
+![CodeQuest Homepage](./amishi/src/assets/challenges.png)
 
+![CodeQuest Homepage](./amishi/src/assets/mentor.png)
+![CodeQuest Homepage](./amishi/src/assets/login.png)
+![CodeQuest Homepage](./amishi/src/assets/signup.png)
 
 
 ## 🚀 Running Locally
