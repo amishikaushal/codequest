@@ -1,95 +1,85 @@
-# 🧠 CodeQuest – DSA Learning Platform
+🧠 CodeQuest – DSA Learning Platform
+CodeQuest is a full-stack educational platform designed to help learners master Data Structures & Algorithms (DSA) through a structured, interactive, and gamified experience.
 
-**CodeQuest** is a full-stack educational platform built to help learners master Data Structures & Algorithms (DSA) through structured, interactive, and gamified experiences.
+With 500+ curated coding problems, performance tracking, flashcards, and mentorship features, CodeQuest keeps learners consistent, confident, and job-ready.
 
-> 🚀 Built with 500+ curated coding questions, live performance charts, flashcards, and mentorship tools, CodeQuest keeps learners consistent, confident, and job-ready.
+✨ Features
+✅ 500+ Structured DSA Questions categorized by difficulty
 
----
+📌 Manual Progress Tracker with checkbox UI
 
-## ✨ Features
+📅 Daily Coding Challenge Calendar (rotates every day)
 
-- ✅ **500+ Structured DSA Questions** across multiple levels
-- 📌 **Manual Checkbox Tracker** for marking completed problems
-- 📅 **Rotating Daily Coding Challenge Calendar**
-- ⚡ **0% Delay Pie Charts** for live performance tracking
-- 🧠 **100+ One-Line FAQ Flashcards** for rapid revision
-- 🧾 **Practice Cards** for bite-sized concepts and edge cases
-- 🔐 **Supabase Authentication** with email verification
-- 👥 **Mentorship Links** for guidance and career prep
+⚡ Live Performance Tracking with animated pie charts
 
----
+🧠 100+ One-Line FAQ Flashcards for rapid DSA revision
 
-## 🛠️ Tech Stack
+🧾 Practice Cards covering edge cases & tricky concepts
 
-| Layer       | Technology                         |
-|-------------|-------------------------------------|
-| Frontend    | React, JavaScript, HTML, CSS       |
-| Backend     | Node.js, Express                   |
-| Database    | MongoDB                            |
-| Auth        | Supabase Authentication            |
-| Tooling     | Vite, Supabase, CSS Animations     |
+🔐 Supabase Auth with email verification support
 
----
+👥 Mentorship Portal for career guidance & mock interviews
 
-## 📁 Project Structure
+🛠️ Tech Stack: 
+Layer	Technology
+Frontend	React, JavaScript, HTML, CSS
+Backend	Node.js, Express
+Database	MongoDB
+Auth	Supabase Authentication
+Tooling	Vite, CSS Animations, Supabase
+
+
+📁 Project Structure
 
 codequest/
-│
-├── amishi/                    # Frontend (React + Vite)
-│   ├── node_modules/
+├── amishi/                   # Frontend (React + Vite)
 │   ├── public/
-│   ├── src/
-│   │   ├── assets/            # Images, icons, etc.
-│   │   ├── components/        # Reusable UI components
-│   │   ├── pages/             # Signup, Solve Question, Flashcards etc.
-│   │   ├── styles/            # CSS files
-│   │   ├── utils/             # Helper functions
-│   │   ├── App.css
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   └── main.jsx
-│   ├── .env
-│   ├── .gitignore
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package.json
-│   ├── package-lock.json
-│   └── vite.config.js
-│
-├── backend/                   # Backend (Node.js + Express + MongoDB)
-│   ├── node_modules/
-│   ├── models/                # Mongoose schemas
-│   ├── routes/                # API routes
-│   ├── server.js            # Express server entry point
-│   ├── package.json
-│   └── package-lock.json
-│
-├── README.md                  # Project Overview
+│   └── src/
+│       ├── assets/           # Images, icons, logos
+│       ├── components/       # Reusable UI elements
+│       ├── pages/            # Flashcards, Challenges, Auth pages
+│       ├── styles/           # CSS files
+│       ├── utils/            # Helper functions
+│       ├── App.jsx
+│       └── main.jsx
+├── backend/                  # Backend (Node.js + Express + MongoDB)
+│   ├── models/               # Mongoose schemas
+│   ├── routes/               # API endpoints
+│   └── server.js             # Backend entry point
+├── .env
+├── .gitignore
+├── README.md                 # Project overview
+└── vite.config.js
 
 
----
 
-## 📦 How to Run Locally
+🚀 Running Locally
+1. Clone the Repository
 
-### 1. Clone the repository
-```bash
 git clone https://github.com/amishikaushal/codequest.git
 cd codequest
 
-2. Install frontend (Vite)
+2. Set Up the Frontend
+
 cd amishi
 npm install
 npm run dev
 
-3. Install backend (Express)
+3. Set Up the Backend
+
 cd ../backend
 npm install
 node server.js
 
+Frontend runs on: http://localhost:5173 (or default Vite port)
 
- Deployment
-This project is not yet deployed. For demonstration or portfolio purposes, please refer to the GitHub source or request a live walkthrough.
+Backend runs on: http://localhost:5000
+
+
+🚧 Deployment
+Note: This project is not yet deployed.
+For a demonstration or walkthrough, please refer to the GitHub repository or contact me.
 
 📬 Contact
 Made with ❤️ by Amishi Kaushal
-
+📧 Reach me via LinkedIn or GitHub discussions.
