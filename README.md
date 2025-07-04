@@ -56,7 +56,6 @@ codequest/
 
 
 ---
-
 ## 🚀 Running Locally
 
 ### 1. Clone the Repository
@@ -64,37 +63,39 @@ codequest/
 ```bash
 git clone https://github.com/amishikaushal/codequest.git
 cd codequest
+```
 
-2. Set Up the Frontend
+### 2. Set Up the Frontend
 
 ```bash
 cd amishi
 npm install
 npm run dev
+```
 
-```bash
-
-Frontend runs on: http://localhost:5173 (or your default Vite port)
-
-3. Set Up the Backend
+### 3. Set Up the Backend
 
 ```bash
 
 cd ../backend
 npm install
 node server.js
-
-```bash
-
-
+```
 Backend runs on: http://localhost:5000
 
-
-
-🚧 Deployment
+### 🚧 Deployment
 Note: This project is not yet deployed.
 For a demonstration or walkthrough, please refer to the GitHub repository or contact me.
 
-📬 Contact
+
+
+### 📬 Contact
 Made with ❤️ by Amishi Kaushal
 📧 Reach me via LinkedIn or GitHub Discussions.
+
+
+
+
+
+
+
