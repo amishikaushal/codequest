@@ -55,7 +55,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
       {/* Left: Logo */}
       <div className="navbar-left">
         <div className="logo" onClick={() => navigate("/")}>
-          🏆 Omega
+          🏆 CodeQuest
         </div>
       </div>
 
