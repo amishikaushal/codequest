@@ -4,11 +4,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./DailyChallenge.css";
 
-const challenges = [
-  { id: 1, title: "Reverse a String", description: "Write a function to reverse a given string." },
-  { id: 2, title: "Two Sum", description: "Find two numbers that add up to a target value." },
-  { id: 3, title: "Binary Search", description: "Implement binary search on a sorted array." },
-];
+
 
 const DailyChallenge = () => {
   const [challenge, setChallenge] = useState(null);
@@ -36,7 +32,7 @@ const DailyChallenge = () => {
     <div className="daily-challenge-section">
       <h2>Daily Challenge</h2>
 
-      {/* Question Section */}
+      
       <div className="question-container">
         {loading ? (
           <p>Loading...</p>
@@ -53,7 +49,7 @@ const DailyChallenge = () => {
         )}
       </div>
 
-      {/* Calendar Section */}
+    
       <div className="calendar-container">
         <Calendar
           value={date}

@@ -18,11 +18,11 @@ function Signup() {
     setMessage("");
 
     try {
-      // Supabase signup
+      
       const { data, error } = await supabase.auth.signUp({ email, password });
       if (error) throw error;
 
-      // Create user in MongoDB backend
+
       const userResponse = await fetch("http://localhost:5050/api/users/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -35,7 +35,6 @@ function Signup() {
       const userData = await userResponse.json();
       if (userResponse.status !== 200) throw new Error(userData.error || "Failed to create user");
 
-      // ✅ Store email in localStorage for user tracking
       localStorage.setItem("email", email);
 
       setMessage("Signup successful! Check your email for verification.");

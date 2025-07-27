@@ -1,29 +1,97 @@
+/* Container */
 .mentor-container {
-  padding: 40px;
-  max-width: 800px;
+  padding: 40px 20px;
+  max-width: 1200px;
   margin: auto;
-  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
 }
 
+/* Hero Section */
 .mentor-hero {
-  background-color: #333;
+  background: linear-gradient(135deg, #4c3a54, #b75ae3);
   color: white;
-  padding: 30px;
-  border-radius: 10px;
-  margin-bottom: 30px;
+  padding: 40px 30px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
+
+.mentor-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.mentor-hero p {
+  font-size: 1.1rem;
+}
+
+/* Match Form Section */
+.mentor-match-section {
+  margin-bottom: 40px;
+}
+
+.mentor-match-form {
+  background: #fefefe;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+}
+
+.mentor-match-form h2 {
+  margin-bottom: 15px;
+  color: #7c3d9c;
+}
+
+.mentor-match-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.mentor-match-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.mentor-match-form button {
+  width: 100%;
+  background-color: #725581;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.mentor-match-form button:hover {
+  background-color: #682f87;
+}
+
 
 .resources-section,
 .mentorship-section {
   background: #f9f9f9;
-  padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  text-align: center;
 }
 
 .resources-section h2,
 .mentorship-section h2 {
   color: #7c3d9c;
+  margin-bottom: 15px;
 }
 
 .resources-section ul {
@@ -32,51 +100,41 @@
 }
 
 .resources-section li {
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .resources-section a {
   color: #333;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .resources-section a:hover {
   color: #ff6600;
 }
 
-.mentor-form {
+/* Cards Section */
+.mentor-cards-section {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 24px;
+  margin-top: 30px;
 }
 
-.mentor-form input,
-.mentor-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.mentor-cards-section p {
+  font-style: italic;
+  color: #777;
 }
 
-.mentor-form button {
-  background-color: #ff6600;
-  color: white;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  .mentor-hero h1 {
+    font-size: 2rem;
+  }
 
-.mentor-form button:hover {
-  background-color: #e65c00;
-}
-
-.mentor-cards-section{
-
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
-
+  .mentor-match-form {
+    padding: 20px;
+  }
 }

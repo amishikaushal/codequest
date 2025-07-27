@@ -15,7 +15,7 @@ const DailyChallengeCalendar = () => {
   function getTimeLeft() {
     const now = new Date();
     const nextDay = new Date(now);
-    nextDay.setHours(24, 0, 0, 0); // Reset to midnight
+    nextDay.setHours(24, 0, 0, 0);
     return Math.floor((nextDay - now) / 1000);
   }
 
@@ -27,7 +27,7 @@ const DailyChallengeCalendar = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Fetch daily challenge
+ 
   useEffect(() => {
     const fetchDailyChallenge = async () => {
       try {
@@ -66,7 +66,7 @@ const DailyChallengeCalendar = () => {
     return `${h}:${m}:${s}`;
   };
 
-  // Check if a date is today
+
   const isToday = (someDate) => {
     const today = new Date();
     return (
@@ -78,11 +78,10 @@ const DailyChallengeCalendar = () => {
 
   const handleTodayClick = () => {
     if (dailyChallenge) {
-      // If external links exist, open in new tab
       if (dailyChallenge.links?.leetcode || dailyChallenge.links?.gfg) {
         window.open(dailyChallenge.links?.leetcode || dailyChallenge.links?.gfg, "_blank");
       } else {
-        // Fallback to internal navigation if no external links
+        
         navigate(`/challenge/${dailyChallenge._id}`);
       }
     }

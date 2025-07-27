@@ -29,8 +29,8 @@ const Login = () => {
         localStorage.setItem("email", email);
         toast.success("Logged in successfully! 🎉");
         
-        // Remove the delay and navigate to home page
-        navigate("/"); // Assuming "/" is your home page route
+       
+        navigate("/"); 
       }
     } catch (err) {
       setError(err.message);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Flashcard from "./Flashcard";
 
 const API_URL = "http://localhost:5050";
-const USER_ID = "665f7933556c0803042a6f04"; // Replace with real user ID
+const USER_ID = "665f7933556c0803042a6f04"; 
 
 const Flashcards = () => {
   const [cards, setCards] = useState([]);
@@ -18,7 +18,7 @@ const Flashcards = () => {
       }
       const data = await response.json();
       
-      // Get 10 random cards from the fetched data
+   
       const getRandomCards = (allCards, count) => {
         const shuffled = [...allCards].sort(() => Math.random() - 0.5);
         return shuffled.slice(0, count);

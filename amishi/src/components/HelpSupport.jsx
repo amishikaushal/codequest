@@ -52,7 +52,7 @@ const HelpSupport = () => {
           <li>📧 Email: support@codequest.com</li>
           <li>💬 Discord: discord.gg/codequest-community</li>
           <li>⏰ Support Hours: 24/7 Community Support</li>
-          <li>🔗 TUF Forum: takeuforward.org/forum</li>
+          <li>🔗 CodeQuest Forum: takeuforward.org/forum</li>
         </ul>
       </section>
     </div>

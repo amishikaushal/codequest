@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Flashcard = require("../models/Flashcard");
+const Flashcard = require("../models/flashcard.js");
 const UserFlashcard = require("../models/UserFlashcard");
 
-// GET /flashcards – Get all flashcards
+
 router.get("/", async (req, res) => {
   try {
     const flashcards = await Flashcard.find();
@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET /flashcards/user/:userId – Get flashcards with user-specific progress
+
 router.get("/user/:userId", async (req, res) => {
   try {
     const userId = req.params.userId;

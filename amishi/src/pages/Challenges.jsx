@@ -18,7 +18,7 @@ const ChallengesPage = () => {
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Authentication check
+ 
   useEffect(() => {
     if (!localStorage.getItem("email")) navigate("/login");
   }, [navigate]);
@@ -52,10 +52,10 @@ const ChallengesPage = () => {
           completed: solvedSet.has(c._id),
         }));
 
-        // Get daily challenge using the seeded random function
+        
         const dailyChallenge = getRandomChallenge(enrichedChallenges);
         
-        // Remove the daily challenge from the main list to avoid duplication
+      
         const remainingChallenges = enrichedChallenges.filter(
           c => c._id !== dailyChallenge._id
         );
@@ -116,7 +116,7 @@ const ChallengesPage = () => {
   if (loading) return <div>Loading challenges...</div>;
   if (error) return <div>{error}</div>;
 
-  // Pagination logic excluding the first (Today's) challenge
+  
   const restChallenges = challenges.slice(1);
   const totalPages = Math.ceil(restChallenges.length / CHALLENGES_PER_PAGE);
   const paginated = restChallenges.slice(
@@ -142,7 +142,6 @@ const ChallengesPage = () => {
           </div>
         )}
 
-        {/* Challenge List */}
         <div className="previous-challenges">
           <h2>
             {selectedLevel
@@ -215,7 +214,7 @@ const ChallengesPage = () => {
         </div>
       </div>
 
-      {/* User Progress Pie Chart */}
+
       <div className="right-section">
         <div className="user-progress">
           <h2>📊 Your Progress</h2>

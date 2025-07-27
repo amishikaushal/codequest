@@ -12,7 +12,7 @@ const Question = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const challengesPerPage = 10;
 
-  // Fetch the challenges data from the API
+
   useEffect(() => {
     const fetchChallenges = async () => {
       try {
@@ -21,7 +21,7 @@ const Question = () => {
 
         const data = await response.json();
         setChallenges(data);
-        setCurrentPage(1); // Reset to page 1 on data load
+        setCurrentPage(1); 
       } catch (err) {
         setError("Failed to fetch challenges.");
         console.error(err);
@@ -39,7 +39,7 @@ const Question = () => {
     currentPage * challengesPerPage
   );
 
-  // Pagination logic
+
   const handlePagination = (direction) => {
     if (direction === "prev" && currentPage > 1) {
       setCurrentPage((prev) => prev - 1);

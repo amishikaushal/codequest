@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./MentorMatchForm.css"; // Import CSS for styling
+import "./MentorMatchForm.css"; 
 
 const MentorMatchForm = ({ onSearch }) => {
   const [learningGoals, setLearningGoals] = useState("");
@@ -7,7 +7,7 @@ const MentorMatchForm = ({ onSearch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const goalsArray = learningGoals.split(",").map((goal) => goal.trim());
-    onSearch(goalsArray); // Pass learning goals to parent component
+    onSearch(goalsArray);
   };
 
   return (

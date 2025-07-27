@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Challenge = require('../models/Challenge');
-const User = require('../models/User'); // ✅ Required for user-related routes
+const User = require('../models/user'); 
 
 // GET all challenges
 router.get('/', async (req, res) => {
