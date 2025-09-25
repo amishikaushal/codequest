@@ -1,4 +1,4 @@
-// Flashcard.jsx
+
 import React from "react";
 
 const Flashcard = ({ card, onStatusChange }) => {
