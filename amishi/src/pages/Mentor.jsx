@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Mentor.css";
-import MentorMatchForm from "../components/MentorMatchForm"; // Mentor search form
-import MentorCard from "../components/MentorCard"; // Mentor display card
+import MentorMatchForm from "../components/MentorMatchForm";
+import MentorCard from "../components/MentorCard";
 
-// ✅ Expanded Sample Mentors List
+
 const mentors = [
   { id: 1, name: "Alice Johnson", expertise: ["React", "DSA"], experience: "5+ years", rating: 4.8 },
   { id: 2, name: "David Smith", expertise: ["Python", "Machine Learning"], experience: "7+ years", rating: 4.9 },
@@ -22,7 +22,7 @@ const mentors = [
 const Mentor = () => {
   const [filteredMentors, setFilteredMentors] = useState(mentors);
 
-  // ✅ Filter mentors based on user learning goals
+
   const handleSearch = (learningGoals) => {
     const matchedMentors = mentors.filter((mentor) =>
       mentor.expertise.some((skill) => learningGoals.includes(skill))
@@ -32,18 +32,17 @@ const Mentor = () => {
 
   return (
     <div className="mentor-container">
-      {/* ✅ Hero Section */}
       <section className="mentor-hero">
         <h1>Find a Mentor & Discuss</h1>
         <p>Get access to open-source DSA resources or connect with expert mentors for one-on-one guidance.</p>
       </section>
 
-      {/* ✅ Mentor Match Form */}
+      
       <section className="mentor-match-section">
         <MentorMatchForm onSearch={handleSearch} />
       </section>
 
-      {/* ✅ Open-Source Resources Section */}
+      
       <section className="resources-section">
         <h2>📚 Open-Source DSA Resources</h2>
         <ul>
@@ -54,13 +53,12 @@ const Mentor = () => {
         </ul>
       </section>
 
-      {/* ✅ Paid Mentorship CTA */}
       <section className="mentorship-section">
         <h2>👨‍🏫 Get a One-on-One Mentor</h2>
         <p>Need personalized DSA training and interview prep? Get a mentor today!</p>
       </section>
 
-      {/* ✅ Mentor Cards Section */}
+     
       <section className="mentor-cards-section">
         {filteredMentors.length > 0 ? (
           filteredMentors.map((mentor) => (

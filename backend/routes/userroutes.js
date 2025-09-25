@@ -6,7 +6,7 @@ const Question = require('../models/Challenge');
 
 
 
-router.post('/solve', async (req, res) => {
+router.post('/solve', async (req, res ) => {
   const { email, questionId, value } = req.body;
 
   try {

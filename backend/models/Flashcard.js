@@ -11,7 +11,7 @@ const flashcardSchema = new mongoose.Schema({
   },
   topic: {
     type: String,
-    required: true, // e.g., "OS", "DBMS", "DSA"
+    required: true,
   },
   createdAt: {
     type: Date,

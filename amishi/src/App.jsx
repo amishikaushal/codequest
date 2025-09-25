@@ -18,7 +18,7 @@ import EditProfile from "./components/EditProfile";
 import HelpSupport from "./components/HelpSupport";
 import "./App.css";
 
-// Add ProtectedRoute component at the top of the file
+
 const ProtectedRoute = ({ children }) => {
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);

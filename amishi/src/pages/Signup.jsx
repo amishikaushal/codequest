@@ -32,6 +32,7 @@ function Signup() {
         }),
       });
 
+      
       const userData = await userResponse.json();
       if (userResponse.status !== 200) throw new Error(userData.error || "Failed to create user");
 

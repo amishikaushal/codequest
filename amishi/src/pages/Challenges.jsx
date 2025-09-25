@@ -4,6 +4,7 @@ import "./Challenges.css";
 import { PieChart } from '@mui/x-charts/PieChart';
 import { getRandomChallenge } from '../utils/dailyChallenge';
 
+
 const API_URL = "http://localhost:5050/api";
 const CHALLENGES_PER_PAGE = 10;
 
@@ -19,11 +20,12 @@ const ChallengesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
  
+
   useEffect(() => {
     if (!localStorage.getItem("email")) navigate("/login");
   }, [navigate]);
 
-  // Load challenge and progress data
+  
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);

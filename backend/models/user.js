@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
     default: 0,
   },
   badges: {
-    type: [String], // e.g., ["50 Days Badge 2025"]
+    type: [String],
     default: [],
   },
   recentProblems: {
@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema({
     easySolved: { type: Number, default: 0 },
     mediumSolved: { type: Number, default: 0 },
     hardSolved: { type: Number, default: 0 },
-  },
+  }
 });
 
 module.exports = mongoose.model('User', userSchema);

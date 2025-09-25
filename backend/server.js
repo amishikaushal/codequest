@@ -36,13 +36,13 @@ const connectDB = async () => {
 
 connectDB();
 
-// Routes
+
 app.use('/api/challenges', challengeRoutes);
 app.use('/api/users', userroutes); 
 app.use("/flashcards", flashcardsRoutes);
 
 
-// Test route
+
 app.get('/', (req, res) => {
   res.send('🚀 CodeQuest Backend is Running!');
 });

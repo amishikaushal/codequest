@@ -3,7 +3,7 @@ const router = express.Router();
 const Challenge = require('../models/Challenge');
 const User = require('../models/user'); 
 
-// GET all challenges
+
 router.get('/', async (req, res) => {
   try {
     const challenges = await Challenge.find({});
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET challenges by difficulty (case-insensitive)
+
 router.get('/difficulty/:difficulty', async (req, res) => {
   const { difficulty } = req.params;
   const allowedDifficulties = ['easy', 'medium', 'hard'];
@@ -56,7 +56,6 @@ router.put('/:id/completion', async (req, res) => {
   }
 });
 
-// GET challenges by contest name
 router.get('/contest/:name', async (req, res) => {
   const contestName = decodeURIComponent(req.params.name);
 
@@ -72,24 +71,24 @@ router.get('/contest/:name', async (req, res) => {
   }
 });
 
-// GET random daily challenge
+
 router.get('/daily', async (req, res) => {
   try {
-    // Get total count of challenges
+
     const count = await Challenge.countDocuments();
     if (count === 0) {
       return res.status(404).json({ message: 'No challenges available' });
     }
 
-    // Get today's date as a seed for consistent daily challenge
+   
     const today = new Date();
     const dateString = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
     
-    // Use the date string to generate a consistent index for today
+   
     const seed = dateString.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
     const index = seed % count;
 
-    // Fetch the challenge at that index
+ 
     const challenge = await Challenge.findOne().skip(index);
     
     if (!challenge) {

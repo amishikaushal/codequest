@@ -21,7 +21,7 @@ router.get("/user/:userId", async (req, res) => {
     const flashcards = await Flashcard.find();
     const progress = await UserFlashcard.find({ userId });
 
-    // Map flashcardId => status
+
     const progressMap = {};
     progress.forEach((item) => {
       progressMap[item.flashcardId.toString()] = item.status;
@@ -39,7 +39,7 @@ router.get("/user/:userId", async (req, res) => {
   }
 });
 
-// POST /flashcards/progress – Update flashcard status for a user
+
 router.post("/progress", async (req, res) => {
   try {
     const { userId, flashcardId, status } = req.body;

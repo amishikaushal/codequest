@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ProfileDropdown from "./ProfileDropdown";
 import { FaUserCircle } from "react-icons/fa";
-import supabase from "../utils/supabaseClient"; // Supabase client
+import supabase from "../utils/supabaseClient"; 
 import "./Navbar.css";
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
@@ -19,7 +19,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
     fetchUser();
 
-    // Listen for authentication state changes
+
     const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user || null);
     });
@@ -52,14 +52,14 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <nav className="navbar">
-      {/* Left: Logo */}
+    
       <div className="navbar-left">
         <div className="logo" onClick={() => navigate("/")}>
           🏆 CodeQuest
         </div>
       </div>
 
-      {/* Middle: Navigation Links */}
+
       <div className="navbar-middle">
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
@@ -68,7 +68,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         </ul>
       </div>
 
-      {/* Right: Auth Buttons or Profile */}
+
       <div className="navbar-right">
         {user ? (
           <div className="profile-section" ref={dropdownRef}>
