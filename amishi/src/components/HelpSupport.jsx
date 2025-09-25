@@ -41,7 +41,7 @@ const HelpSupport = () => {
 
         <div className="faq-item">
           <h4>How do I access the premium features?</h4>
-          <p>Premium members get access to exclusive TUF content, mock interviews, mentor support, and premium contest problems. Visit your profile to upgrade.</p>
+          <p>Premium members get access to exclusive  content, mock interviews, mentor support, and premium contest problems. Visit your profile to upgrade.</p>
         </div>
       </section>
 
